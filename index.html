@@ -51,12 +51,8 @@
       letter-spacing: 3px;
       text-decoration: none;
     }
-    .nav-logo span {
-      color: var(--red-light);
-    }
-    .nav-links {
-      display: flex; gap: 32px; list-style: none;
-    }
+    .nav-logo span { color: var(--red-light); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a {
       color: rgba(255,255,255,0.7);
       text-decoration: none;
@@ -77,7 +73,6 @@
       position: relative; overflow: hidden;
       padding: 120px 48px 80px;
     }
-    /* subtle diagonal accent */
     .hero::before {
       content: '';
       position: absolute; top: 0; right: -10%;
@@ -103,10 +98,6 @@
       line-height: 1.2;
       max-width: 780px;
       position: relative; z-index: 1;
-    }
-    .hero-title em {
-      font-style: italic;
-      color: rgba(255,255,255,0.55);
     }
     .hero-tagline {
       font-family: var(--font-display);
@@ -159,26 +150,6 @@
       line-height: 1.8;
     }
 
-    /* placeholder box style */
-    .placeholder {
-      background: #eee8df;
-      border: 2px dashed #c8bfb0;
-      border-radius: 10px;
-      padding: 36px 28px;
-      color: #8a7f72;
-      font-size: 0.82rem;
-      font-style: italic;
-      line-height: 1.7;
-      margin-top: 28px;
-    }
-    .placeholder strong {
-      color: #6b5f50;
-      font-style: normal;
-      font-size: 0.75rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
     /* ─── ABOUT ─── */
     #about { background: var(--warm-white); }
     .about-grid {
@@ -188,6 +159,45 @@
       max-width: 1100px;
       margin: 0 auto;
       align-items: start;
+    }
+    .about-text p {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-top: 16px;
+    }
+    .about-text p:first-of-type { margin-top: 18px; }
+    .about-right-block {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 40px 36px;
+      border-left: 3px solid var(--green-mid);
+    }
+    .about-right-block h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--green-dark);
+      margin-bottom: 14px;
+    }
+    .about-right-block .stat-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #e0d8ce;
+    }
+    .about-right-block .stat-row:last-child { border-bottom: none; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.5;
     }
 
     /* ─── VISION ─── */
@@ -222,13 +232,11 @@
       color: #fff;
       margin-bottom: 10px;
     }
-    .vision-card .placeholder {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.4);
-      margin-top: 12px;
+    .vision-card p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
     }
-    .vision-card .placeholder strong { color: rgba(255,255,255,0.55); }
 
     /* ─── OUR WORK ─── */
     #work { background: var(--cream); }
@@ -258,153 +266,287 @@
       color: var(--green-dark);
       margin-bottom: 10px;
     }
-    .work-card .placeholder { margin-top: 14px; }
+    .work-card p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    /* ─── PRESS RELEASES ─── */
+    #press { background: var(--warm-white); }
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      max-width: 1100px;
+      margin-left: auto; margin-right: auto;
+    }
+    .press-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .press-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .press-card-header {
+      background: var(--green-dark);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .press-date-box {
+      background: var(--red);
+      border-radius: 6px;
+      padding: 6px 10px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .press-date-box .p-month {
+      font-size: 0.58rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      display: block;
+    }
+    .press-date-box .p-day {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+      line-height: 1.2;
+    }
+    .press-card-header .press-type {
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red-light);
+      font-weight: 600;
+    }
+    .press-card-body {
+      padding: 22px 24px 24px;
+      flex: 1;
+    }
+    .press-card-body h4 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      color: var(--green-dark);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+    .press-card-body p {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
 
     /* ─── EVENTS ─── */
-    #events { background: var(--warm-white); }
+    #events { background: var(--cream); }
     .events-list { max-width: 760px; margin: 48px auto 0; }
     .event-item {
       display: grid;
       grid-template-columns: 72px 1fr;
       gap: 28px;
       padding: 32px 0;
-      border-bottom: 1px solid #e8e2d8;
-      align-items: start;
+      border-bottom: 1px solid #e0d8ce;
     }
     .event-item:last-child { border-bottom: none; }
     .event-date {
-      text-align: center;
       background: var(--green-dark);
-      color: #fff;
       border-radius: 10px;
-      padding: 12px 8px;
+      padding: 14px 8px;
+      text-align: center;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
     }
     .event-date .month {
       font-size: 0.6rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--red-light);
-      display: block;
+      font-weight: 600;
     }
     .event-date .day {
       font-family: var(--font-display);
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 700;
-      display: block;
-      line-height: 1.3;
+      color: #fff;
+      line-height: 1.2;
     }
-    .event-item h4 {
+    .event-date .year {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 2px;
+    }
+    .event-content h4 {
       font-family: var(--font-display);
+      font-size: 1.1rem;
       color: var(--green-dark);
-      font-size: 1.05rem;
       margin-bottom: 6px;
     }
-    .event-item .placeholder { margin-top: 8px; padding: 18px 20px; }
-
-    /* ─── MEMBERSHIP ─── */
-    #membership { background: var(--green-dark); color: #fff; }
-    #membership .section-label { color: var(--red-light); }
-    #membership .section-title { color: #fff; max-width: 100%; text-align: center; }
-    .membership-wrap { max-width: 900px; margin: 0 auto; text-align: center; }
-    .membership-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 52px;
-    }
-    .mem-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-      padding: 40px 24px 32px;
-      text-align: left;
-    }
-    .mem-card h4 {
-      font-family: var(--font-display);
-      color: #fff;
-      font-size: 1.1rem;
+    .event-content .event-meta {
+      font-size: 0.75rem;
+      color: var(--text-light);
       margin-bottom: 8px;
     }
-    .mem-card .mem-tag {
+    .event-content p {
+      font-size: 0.83rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .event-tag {
       display: inline-block;
-      background: var(--red);
-      color: #fff;
       font-size: 0.6rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-bottom: 16px;
-    }
-    .mem-card .placeholder {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.4);
-    }
-    .mem-card .placeholder strong { color: rgba(255,255,255,0.55); }
-    .mem-cta {
-      margin-top: 48px;
-      display: inline-block;
-      background: var(--red);
-      color: #fff;
-      padding: 14px 40px;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      color: var(--green-mid);
+      background: rgba(26,92,58,0.08);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-top: 8px;
       font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s;
     }
-    .mem-cta:hover { background: #a52020; }
+    .event-tag.upcoming { color: var(--red); background: rgba(198,40,40,0.08); }
+
+    /* ─── MEMBER ORGS ─── */
+    #members { background: var(--green-dark); }
+    #members .section-label { color: var(--red-light); }
+    #members .section-title { color: #fff; max-width: 100%; text-align: center; }
+    #members .section-title + p { color: rgba(255,255,255,0.5); max-width: 660px; margin-left: auto; margin-right: auto; text-align: center; }
+    .orgs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+      max-width: 1000px;
+      margin-left: auto; margin-right: auto;
+    }
+    .org-pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 18px 16px;
+      text-align: center;
+      font-family: var(--font-bangla);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .org-pill:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.25);
+    }
 
     /* ─── CONTACT ─── */
-    #contact { background: var(--cream); }
+    #contact { background: var(--warm-white); }
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
+      align-items: start;
     }
     .contact-info h4 {
       font-family: var(--font-display);
+      font-size: 0.95rem;
       color: var(--green-dark);
-      font-size: 1.05rem;
-      margin-top: 28px;
+      margin-top: 24px;
       margin-bottom: 6px;
     }
+    .contact-info h4:first-of-type { margin-top: 28px; }
     .contact-info p {
+      font-size: 0.84rem;
       color: var(--text-mid);
-      font-size: 0.88rem;
+      line-height: 1.6;
     }
-    .contact-form .placeholder {
-      min-height: 280px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    .contact-info a {
+      color: var(--green-mid);
+      text-decoration: none;
+      font-weight: 500;
     }
+    .contact-info a:hover { text-decoration: underline; }
+    .contact-form-box {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 40px 36px;
+      border-left: 3px solid var(--green-mid);
+    }
+    .contact-form-box h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+    }
+    .form-field { margin-bottom: 18px; }
+    .form-field label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .form-field input, .form-field textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #ddd5c8;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      background: #fff;
+      transition: border-color 0.3s;
+      outline: none;
+    }
+    .form-field input:focus, .form-field textarea:focus { border-color: var(--green-mid); }
+    .form-field textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      display: inline-block;
+      background: var(--green-dark);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 6px;
+    }
+    .form-submit:hover { background: var(--green-mid); }
 
     /* ─── FOOTER ─── */
     footer {
-      background: #071a10;
-      color: rgba(255,255,255,0.4);
-      text-align: center;
+      background: var(--green-dark);
       padding: 48px;
-      font-size: 0.75rem;
-      letter-spacing: 1px;
+      text-align: center;
+    }
+    footer p {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.78rem;
+      margin-top: 10px;
     }
     footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
     footer a:hover { color: #fff; }
     .footer-logo {
       font-family: var(--font-display);
       color: #fff;
-      font-size: 1rem;
+      font-size: 1.3rem;
       font-weight: 700;
       letter-spacing: 3px;
-      margin-bottom: 16px;
     }
     .footer-logo span { color: var(--red-light); }
 
@@ -418,6 +560,100 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* ─── HAMBURGER (hidden on desktop) ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 101;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── MOBILE OVERLAY NAV ─── */
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100vh;
+      background: var(--green-dark);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-overlay a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    .mobile-nav-overlay a:hover { color: #fff; }
+    .mobile-nav-overlay .mobile-red {
+      color: var(--red-light);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-family: var(--font-body);
+      font-weight: 500;
+      margin-top: 20px;
+    }
+
+    /* ═══════════════════════════════════════════
+       MOBILE — 768px and below
+       ═══════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero { padding: 100px 28px 60px; }
+      .hero-title { font-size: clamp(2rem, 8vw, 2.8rem); }
+
+      section { padding: 64px 24px; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .vision-grid { grid-template-columns: 1fr; gap: 20px; max-width: 100%; }
+      .work-grid { grid-template-columns: 1fr; gap: 20px; max-width: 100%; }
+      .press-grid { grid-template-columns: 1fr; gap: 20px; max-width: 100%; }
+      .event-item { grid-template-columns: 56px 1fr; gap: 18px; }
+      .orgs-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      footer { padding: 36px 24px; }
+    }
+
+    /* ═══════════════════════════════════════════
+       SMALL PHONES — 480px and below
+       ═══════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero { padding: 90px 20px 50px; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+      .hero-tagline { font-size: 1rem; }
+      .hero-sub { font-size: 0.9rem; }
+      section { padding: 52px 20px; }
+      .work-card { padding: 28px 22px; }
+      .vision-card { padding: 28px 22px; }
+      .event-date { padding: 10px 6px; }
+      .event-date .day { font-size: 1.3rem; }
+      .orgs-grid { grid-template-columns: 1fr; }
+      .about-right-block { padding: 28px 22px; }
+      .contact-form-box { padding: 28px 22px; }
+    }
   </style>
 </head>
 <body>
@@ -429,11 +665,27 @@
     <li><a href="#about">About</a></li>
     <li><a href="#vision">Vision</a></li>
     <li><a href="#work">Our Work</a></li>
+    <li><a href="#press">Press</a></li>
     <li><a href="#events">Events</a></li>
-    <li><a href="#membership">Membership</a></li>
+    <li><a href="#members">Members</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#vision" class="mobile-link">Vision</a>
+  <a href="#work" class="mobile-link">Our Work</a>
+  <a href="#press" class="mobile-link">Press</a>
+  <a href="#events" class="mobile-link">Events</a>
+  <a href="#members" class="mobile-link">Members</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <span class="mobile-red">fwprbd.org</span>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -450,15 +702,30 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="about-grid">
-    <div class="reveal">
+    <div class="about-text reveal">
       <p class="section-label">About Us</p>
       <h2 class="section-title">Who we are &amp; why we exist</h2>
-      <p>A brief introduction to the Forum, its founding, and the community behind it.</p>
+      <p>নারীর রাজনৈতিক অধিকার ফোরাম (FWPR) একটি বহু-সংস্থা জোট যা বাংলাদেশে নারীর রাজনৈতিক অংশগ্রহণ নিশ্চিত করতে কাজ করছে। আমরা বিশ্বাস করি যে সংসদে নারীর অর্থপূর্ণ প্রতিনিধিত্ব ছাড়া গণতন্ত্র অসম্পূর্ণ।</p>
+      <p>৩১ আগস্ট ২০২৫ সালে আনুষ্ঠানিকভাবে গঠিত এই ফোরাম সংবিধানিক অধিকার কার্যকর করা, সংসদে নারীর প্রতিনিধিত্ব নিশ্চিত করা এবং রাজনৈতিক অংশগ্রহণে বিদ্যমান কাঠামোগত বৈষম্য দূর করার জন্য আইন ও নীতির সংস্কার দাবি করে।</p>
+      <p>আমাদের মূল অবস্থান হলো — নারীর প্রতিনিধিত্বকে প্রতীকী পর্যায়ে সীমাবদ্ধ রাখা যাবে না। আমাদের লক্ষ্য হলো নারীর প্রকৃত ক্ষমতায়ন নিশ্চিত করা, যাতে তারা জনগণের ভোটে নির্বাচিত হয়ে সংসদে কার্যকর ভূমিকা রাখতে পারেন।</p>
     </div>
-    <div class="reveal" style="transition-delay: 0.15s;">
-      <div class="placeholder">
-        <strong>— আমাদের সম্পর্কে</strong><br/><br/>
-        এখানে Forum-এর পরিচয় লিখুন — কখন শুরু হয়েছিল, কারা আছেন, কী লক্ষ্যে কাজ করছেন। যেকোনো background story বা founding context।
+    <div class="about-right-block reveal" style="transition-delay: 0.15s;">
+      <h4>Key Demands at a Glance</h4>
+      <div class="stat-row">
+        <span class="stat-num">৩৩%</span>
+        <span class="stat-label">সাধারণ আসনে নূন্যতম নারী প্রার্থী মনোনয়ন বাধ্যতামূলক করার দাবি</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-num">১০০</span>
+        <span class="stat-label">সংরক্ষিত আসনে সরাসরি নির্বাচনের দাবি (বর্তমান ৫০ থেকে দ্বিগুণ)</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-num">৫০%</span>
+        <span class="stat-label">দীর্ঘমেয়াদী লক্ষ্য — সংসদে নারীর পূর্ণ প্রতিনিধিত্ব নিশ্চিত করা</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-num">৭৪%</span>
+        <span class="stat-label">নাগরিকরা সংসদে সরাসরি নির্বাচিত নারী প্রতিনিধিত্বের পক্ষে মত দিয়েছেন (BBS জরিপ, ২০২৪)</span>
       </div>
     </div>
   </div>
@@ -469,31 +736,23 @@
   <div class="reveal" style="text-align: center; max-width: 1100px; margin: 0 auto;">
     <p class="section-label">Our Vision</p>
     <h2 class="section-title" style="max-width: 100%; text-align: center;">What we're working towards</h2>
+    <p style="max-width: 660px; margin-left: auto; margin-right: auto; text-align: center;">তিনটি মূল স্তম্ভের উপর দাঁড়িয়ে আমরা নারীর রাজনৈতিক অধিকার নিশ্চিত করতে কাজ করছি।</p>
   </div>
   <div class="vision-grid">
     <div class="vision-card reveal">
       <div class="card-num">01</div>
       <h4>Political Participation</h4>
-      <div class="placeholder">
-        <strong>— লক্ষ্য ১</strong><br/>
-        এই pillar-এর নির্দিষ্ট লক্ষ্য ও দৃষ্টিভঙ্গি লিখুন।
-      </div>
+      <p>রাজনৈতিক দলগুলোর প্রার্থী মনোনয়ন ও নেতৃত্ব কাঠামোতে নারীর অংশগ্রহণ বাড়ানো। RPO সংশোধনের মাধ্যমে দলীয় কাঠামোতে ৩৩% নারী সদস্য মনোনয়ন বাধ্যতামূলক করা এবং ধীরে ধীরে তা ৫০%-এ উন্নীত করা।</p>
     </div>
     <div class="vision-card reveal" style="transition-delay: 0.1s;">
       <div class="card-num">02</div>
       <h4>Safety &amp; Protection</h4>
-      <div class="placeholder">
-        <strong>— লক্ষ্য ২</strong><br/>
-        এই pillar-এর নির্দিষ্ট লক্ষ্য ও দৃষ্টিভঙ্গি লিখুন।
-      </div>
+      <p>নির্বাচনকালীন প্রতিটি স্তরে নারীদের জন্য সুরক্ষিত পরিবেশ তৈরি করা। শারীরিক ও অনলাইন সহিংসতা প্রতিরোধে নির্বাচন কমিশনকে কার্যকর নীতি ও প্রাতিষ্ঠানিক ব্যবস্থা গ্রহণের জন্য দাবি জানানো।</p>
     </div>
     <div class="vision-card reveal" style="transition-delay: 0.2s;">
       <div class="card-num">03</div>
       <h4>Systemic Change</h4>
-      <div class="placeholder">
-        <strong>— লক্ষ্য ৩</strong><br/>
-        এই pillar-এর নির্দিষ্ট লক্ষ্য ও দৃষ্টিভঙ্গি লিখুন।
-      </div>
+      <p>সংরক্ষিত আসনে সরাসরি নির্বাচনের আওতায় আনা এবং নারী প্রার্থীদের সমান প্রতিযোগিতার সুযোগ দিতে রাষ্ট্রীয় মঞ্জুরি প্রদান করা। আইনসভায় নারীর কার্যকর ও টেকসই নেতৃত্ব গড়ে তোলা।</p>
     </div>
   </div>
 </section>
@@ -506,31 +765,68 @@
   </div>
   <div class="work-grid">
     <div class="work-card reveal">
-      <h4>Election Monitoring</h4>
-      <div class="placeholder">
-        <strong>— নির্বাচন পর্যবেক্ষণ</strong><br/>
-        এই কাজের বিবরণ লিখুন — কী করা হয়, কীভাবে, কী ফলাফল।
-      </div>
+      <h4>Election Monitoring &amp; Analysis</h4>
+      <p>জাতীয় নির্বাচনে নারী প্রার্থীদের মনোনয়ন, অংশগ্রহণ ও প্রতিযোগিতার তথ্য সংগ্রহ ও বিশ্লেষণ করি। ১২ ফেব্রুয়ারির নির্বাচনে ২,৫৬৮ জন প্রার্থীর মধ্যে মাত্র ১০৯ জন নারী ছিলেন — এই ধরনের গভীর পর্যবেক্ষণ আমাদের মূল কাজের একটি।</p>
     </div>
     <div class="work-card reveal" style="transition-delay: 0.1s;">
-      <h4>Advocacy &amp; Campaigns</h4>
-      <div class="placeholder">
-        <strong>— অ্যাডভোকেসি</strong><br/>
-        এই কাজের বিবরণ লিখুন।
-      </div>
+      <h4>Advocacy &amp; Policy Engagement</h4>
+      <p>জাতীয় ঐকমত্য কমিশন, নির্বাচন কমিশন এবং রাজনৈতিক দলগুলোর সাথে সরাসরি সংযোগ স্থাপন করে নারীর রাজনৈতিক অধিকার সংক্রান্ত নীতিগত পরিবর্তনের জন্য কাজ করি। জুলাই সনদে ২৪(চ) ধারা সংযুক্তির প্রস্তাব আমাদের এই কাজের উদাহরণ।</p>
     </div>
     <div class="work-card reveal" style="transition-delay: 0.15s;">
-      <h4>Community Building</h4>
-      <div class="placeholder">
-        <strong>— কমিউনিটি</strong><br/>
-        এই কাজের বিবরণ লিখুন।
-      </div>
+      <h4>Community &amp; Coalition Building</h4>
+      <p>১২টি নারী সংগঠন, নাগরিক সংস্থা ও মানবাধিকার কর্মীদের একত্রিত করে একটি শক্তিশালী রাজনৈতিক বলয় তৈরি করেছি। স্থানীয় ও জাতীয় পর্যায়ে রাজনৈতিক দলগুলোর নারী নেতৃত্বের সাথে সরাসরি কথা বলছি।</p>
     </div>
     <div class="work-card reveal" style="transition-delay: 0.2s;">
-      <h4>Research &amp; Awareness</h4>
-      <div class="placeholder">
-        <strong>— গবেষণা ও সচেতনতা</strong><br/>
-        এই কাজের বিবরণ লিখুন।
+      <h4>Research &amp; Public Awareness</h4>
+      <p>নির্বাচন কমিশনের তথ্য বিশ্লেষণ করে দেখেছি যে ৫১টি রাজনৈতিক দলের মধ্যে ৩০টির কোনো নারী প্রার্থী নেই। এই ধরনের গবেষণা ও তথ্য জনগণের সামনে তুলে ধরে সচেতনতা তৈরি করি।</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS RELEASES -->
+<section id="press">
+  <div class="reveal" style="max-width: 1100px; margin: 0 auto;">
+    <p class="section-label">Press Releases</p>
+    <h2 class="section-title">Our statements &amp; positions</h2>
+  </div>
+  <div class="press-grid">
+    <div class="press-card reveal">
+      <div class="press-card-header">
+        <div class="press-date-box">
+          <span class="p-month">Jan</span>
+          <span class="p-day">১২</span>
+        </div>
+        <span class="press-type">Press Release · 2026</span>
+      </div>
+      <div class="press-card-body">
+        <h4>নারী প্রার্থী মনোনয়নের সংকট: রাজনৈতিক দলগুলোর প্রতিশ্রুতি ও বাস্তবায়নের ব্যবধান</h4>
+        <p>আসন জাতীয় নির্বাচনে ৫১টি দলের মধ্যে ৩০টির কোনো নারী প্রার্থী নেই। জুলাই সনদের ন্যূনতম ৫% নারী মনোনয়ন সংক্রান্ত অঙ্গীকারও বাস্তবায়িত হয়নি। নির্বাচন কমিশনকে জবাবদিহি করতে হবে।</p>
+      </div>
+    </div>
+    <div class="press-card reveal" style="transition-delay: 0.1s;">
+      <div class="press-card-header">
+        <div class="press-date-box">
+          <span class="p-month">Sep</span>
+          <span class="p-day">১৪</span>
+        </div>
+        <span class="press-type">Press Conference · 2025</span>
+      </div>
+      <div class="press-card-body">
+        <h4>জনগণের ৫১ শতাংশের মতামতকে উপেক্ষা করে তৈরি জুলাই সনদ</h4>
+        <p>সংসদে নারীর ন্যূনতম ৩৩% প্রতিনিধিত্ব এখনই বাধ্যতামূলক করতে হবে। সংরক্ষিত ১০০ আসনে সরাসরি নির্বাচন এবং ৩৩% নারী প্রার্থী মনোনয়ন আমাদের মূল দাবি।</p>
+      </div>
+    </div>
+    <div class="press-card reveal" style="transition-delay: 0.2s;">
+      <div class="press-card-header">
+        <div class="press-date-box">
+          <span class="p-month">Aug</span>
+          <span class="p-day">৩১</span>
+        </div>
+        <span class="press-type">News Conference · 2025</span>
+      </div>
+      <div class="press-card-body">
+        <h4>১০০ সংরক্ষিত আসনে সরাসরি নির্বাচন এবং দলগুলো থেকে ৩৩% নারী প্রার্থী মনোনয়ন চাই</h4>
+        <p>বিদ্যমান সংরক্ষিত আসনের ব্যবস্থা কার্যকর নয়। টেকসই নারী নেতৃত্ব গড়ে তুলতে সরাসরি নির্বাচনের বিকল্প নেই। নারীর ক্ষমতায়ন কেবল অধিকার নয়, এটি বাংলাদেশের গণতন্ত্রের স্থায়িত্ব ও মর্যাদার প্রশ্ন।</p>
       </div>
     </div>
   </div>
@@ -538,87 +834,119 @@
 
 <!-- EVENTS -->
 <section id="events">
-  <div class="reveal" style="text-align: center;">
+  <div class="reveal" style="text-align: center; max-width: 1100px; margin: 0 auto;">
     <p class="section-label">Events</p>
-    <h2 class="section-title" style="max-width: 100%; text-align: center;">Past & Upcoming</h2>
+    <h2 class="section-title" style="max-width: 100%; text-align: center;">Past &amp; Upcoming</h2>
   </div>
   <div class="events-list">
+
     <div class="event-item reveal">
       <div class="event-date">
-        <span class="month">— —</span>
-        <span class="day">—</span>
+        <span class="month">Feb</span>
+        <span class="day">০৫</span>
+        <span class="year">2026</span>
       </div>
-      <div>
-        <h4>Event Title Here</h4>
-        <div class="placeholder">
-          <strong>— ইভেন্ট ১</strong><br/>
-          তারিখ, লোকেশন, এবং ইভেন্টের বিবরণ লিখুন।
-        </div>
+      <div class="event-content">
+        <h4>নির্বাচন পর্যবেক্ষণ ও নারীর রাজনৈতিক অংশগ্রহণ বিশ্লেষণ</h4>
+        <p class="event-meta">১২ ফেব্রুয়ারির নির্বাচনের আগে প্রস্তুতি সভা</p>
+        <p>আসন্ন জাতীয় নির্বাচনে নারী প্রার্থীদের অংশগ্রহণ, দলগুলোর মনোনয়ন প্রক্রিয়া এবং নির্বাচনকালীন সহিংসতা পর্যবেক্ষণের প্রস্তুতি নেওয়া হবে।</p>
+        <span class="event-tag upcoming">Upcoming</span>
       </div>
     </div>
-    <div class="event-item reveal" style="transition-delay: 0.1s;">
+
+    <div class="event-item reveal" style="transition-delay: 0.08s;">
       <div class="event-date">
-        <span class="month">— —</span>
-        <span class="day">—</span>
+        <span class="month">Jan</span>
+        <span class="day">১২</span>
+        <span class="year">2026</span>
       </div>
-      <div>
-        <h4>Event Title Here</h4>
-        <div class="placeholder">
-          <strong>— ইভেন্ট ২</strong><br/>
-          তারিখ, লোকেশন, এবং ইভেন্টের বিবরণ লিখুন।
-        </div>
+      <div class="event-content">
+        <h4>প্রেস কনফারেন্স — নারী প্রার্থী মনোনয়নের সংকট</h4>
+        <p class="event-meta">নির্বাচন কমিশনের জবাবদিহির দাবিতে সংবাদ সম্মেলন</p>
+        <p>৫১টি দলের নারী প্রার্থী মনোনয়নের তথ্য বিশ্লেষণ উপস্থাপন করা হয়েছে এবং নির্বাচন কমিশনকে জবাবদিহি করার দাবি জানানো হয়েছে।</p>
+        <span class="event-tag">Completed</span>
       </div>
     </div>
-    <div class="event-item reveal" style="transition-delay: 0.2s;">
+
+    <div class="event-item reveal" style="transition-delay: 0.16s;">
       <div class="event-date">
-        <span class="month">— —</span>
-        <span class="day">—</span>
+        <span class="month">Oct</span>
+        <span class="day">১৬</span>
+        <span class="year">2025</span>
       </div>
-      <div>
-        <h4>Event Title Here</h4>
-        <div class="placeholder">
-          <strong>— ইভেন্ট ৩</strong><br/>
-          তারিখ, লোকেশন, এবং ইভেন্টের বিবরণ লিখুন।
-        </div>
+      <div class="event-content">
+        <h4>জাতীয় ঐকমত্য কমিশনে প্রতিবাদলিপি পাঠানো</h4>
+        <p class="event-meta">জুলাই সনদে নারীর রাজনৈতিক প্রতিনিধিত্ব বিষয়ে আনুষ্ঠানিক চিঠি</p>
+        <p>জুলাই সনদের চূড়ান্ত সংস্করণে নারীর প্রতিনিধিত্ব নিশ্চিত করার বিষয়ে কোনো কার্যকর বাধ্যবাধকতা না থাকায় আমরা তীব্র প্রতিবাদ জানিয়েছি।</p>
+        <span class="event-tag">Completed</span>
       </div>
     </div>
+
+    <div class="event-item reveal" style="transition-delay: 0.24s;">
+      <div class="event-date">
+        <span class="month">Oct</span>
+        <span class="day">০৯</span>
+        <span class="year">2025</span>
+      </div>
+      <div class="event-content">
+        <h4>সিদ্ধান্ত গ্রহণে নারীরা কোথায়? — জাতীয় সম্মেলন</h4>
+        <p class="event-meta">কৃষিবিদ ইনস্টিটিউট বাংলাদেশ · বিকাল ৩টা থেকে সন্ধ্যা ৬টা</p>
+        <p>রাজনৈতিক দল, নাগরিক সমাজ, গণমাধ্যম ও নারী সংগঠনের প্রতিনিধিরা একসাথে আলোচনায় অংশ নিয়েছেন। দলগুলোর প্রার্থী মনোনয়ন ও নেতৃত্ব কাঠামোতে নারীর অংশগ্রহণ বাড়ানো এবং সংরক্ষিত আসন সরাসরি নির্বাচনের আওতায় আনার বিষয়ে আলোচনা হয়েছে।</p>
+        <span class="event-tag">Completed</span>
+      </div>
+    </div>
+
+    <div class="event-item reveal" style="transition-delay: 0.32s;">
+      <div class="event-date">
+        <span class="month">Sep</span>
+        <span class="day">১৪</span>
+        <span class="year">2025</span>
+      </div>
+      <div class="event-content">
+        <h4>প্রেস কনফারেন্স — জুলাই সনদ ও নারীর প্রতিনিধিত্ব</h4>
+        <p class="event-meta">রিপোর্টার্স ইউনিটি, সাগর-রুনি সম্মেলন কক্ষ, ঢাকা</p>
+        <p>জুলাই সনদে নারীর জন্য মাত্র ৫% মনোনয়নের প্রস্তাব অন্তর্ভুক্ত হওয়ার বিষয়ে আমাদের দৃঢ় অবস্থান উপস্থাপন করা হয়েছে। সংরক্ষিত ১০০ আসনে সরাসরি নির্বাচন ও ৩৩% নারী প্রার্থী মনোনয়নের দাবি জানানো হয়েছে।</p>
+        <span class="event-tag">Completed</span>
+      </div>
+    </div>
+
+    <div class="event-item reveal" style="transition-delay: 0.4s;">
+      <div class="event-date">
+        <span class="month">Aug</span>
+        <span class="day">৩১</span>
+        <span class="year">2025</span>
+      </div>
+      <div class="event-content">
+        <h4>নারীর রাজনৈতিক অধিকার ফোরামের আনুষ্ঠানিক যাত্রা শুরু</h4>
+        <p class="event-meta">সংবাদ সম্মেলন ও রূপরেখা উন্মোচন</p>
+        <p>১২টি নারী আন্দোলন, নাগরিক সংগঠন ও মানবাধিকার কর্মীর পক্ষে ফোরামের আনুষ্ঠানিক আত্মপ্রকাশ ঘটেছে। মূল প্রস্তাবনা উপস্থাপন করা হয়েছে — ১০০ সংরক্ষিত আসনে সরাসরি নির্বাচন এবং দলগুলো থেকে ৩৩% নারী প্রার্থী মনোনয়ন।</p>
+        <span class="event-tag">Completed</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- MEMBERSHIP -->
-<section id="membership">
-  <div class="membership-wrap">
-    <div class="reveal">
-      <p class="section-label">Membership</p>
-      <h2 class="section-title">Join the Forum</h2>
-    </div>
-    <div class="membership-grid">
-      <div class="mem-card reveal">
-        <span class="mem-tag">Tier 1</span>
-        <h4>Supporter</h4>
-        <div class="placeholder">
-          <strong>— সদস্যপদ স্তর ১</strong><br/>
-          এই তিয়ারের সুবিধা ও যোগ্যতা লিখুন।
-        </div>
-      </div>
-      <div class="mem-card reveal" style="transition-delay: 0.1s;">
-        <span class="mem-tag">Tier 2</span>
-        <h4>Active Member</h4>
-        <div class="placeholder">
-          <strong>— সদস্যপদ স্তর ২</strong><br/>
-          এই তিয়ারের সুবিধা ও যোগ্যতা লিখুন।
-        </div>
-      </div>
-      <div class="mem-card reveal" style="transition-delay: 0.2s;">
-        <span class="mem-tag">Tier 3</span>
-        <h4>Core Volunteer</h4>
-        <div class="placeholder">
-          <strong>— সদস্যপদ স্তর ৩</strong><br/>
-          এই তিয়ারের সুবিধা ও যোগ্যতা লিখুন।
-        </div>
-      </div>
-    </div>
-    <a href="#contact" class="mem-cta">Get Involved</a>
+<!-- MEMBER ORGANISATIONS -->
+<section id="members">
+  <div class="reveal" style="text-align: center; max-width: 1100px; margin: 0 auto;">
+    <p class="section-label">Member Organisations</p>
+    <h2 class="section-title" style="max-width: 100%; text-align: center;">The coalition behind FWPR</h2>
+    <p style="max-width: 660px; margin-left: auto; margin-right: auto; text-align: center;">এই ফোরামের পক্ষে ১২টি নারী সংগঠন, নাগরিক সংস্থা ও মানবাধিকার কর্মী সংযুক্ত আছে।</p>
+  </div>
+  <div class="orgs-grid">
+    <div class="org-pill reveal">ক্ষুব্ধ নারী সমাজ</div>
+    <div class="org-pill reveal" style="transition-delay: 0.05s;">গণসাক্ষরতা অভিযান</div>
+    <div class="org-pill reveal" style="transition-delay: 0.1s;">দুর্বার নেটওয়ার্ক ফাউন্ডেশন</div>
+    <div class="org-pill reveal" style="transition-delay: 0.15s;">নাগরিক কোয়ালিশন</div>
+    <div class="org-pill reveal" style="transition-delay: 0.2s;">নারী উদ্যোগ কেন্দ্র (নউক)</div>
+    <div class="org-pill reveal" style="transition-delay: 0.25s;">নারীগ্রন্থ প্রবর্তনা</div>
+    <div class="org-pill reveal" style="transition-delay: 0.3s;">নারী সংহতি</div>
+    <div class="org-pill reveal" style="transition-delay: 0.35s;">নারীপক্ষ</div>
+    <div class="org-pill reveal" style="transition-delay: 0.4s;">নারীর ডাকে রাজনীতি</div>
+    <div class="org-pill reveal" style="transition-delay: 0.45s;">ফেমিনিস্ট অ্যালায়েন্স অফ বাংলাদেশ (ফ্যাব)</div>
+    <div class="org-pill reveal" style="transition-delay: 0.5s;">বাংলাদেশ নারী মুক্তি কেন্দ্র</div>
+    <div class="org-pill reveal" style="transition-delay: 0.55s;">ভয়েস ফর রিফর্ম</div>
   </div>
 </section>
 
@@ -630,26 +958,30 @@
       <h2 class="section-title">Get in touch</h2>
       <div class="contact-info">
         <h4>Email</h4>
-        <div class="placeholder" style="padding: 12px 16px; margin-top: 6px;">
-          <strong>—</strong> আপনার contact email লিখুন।
-        </div>
-        <h4>Location</h4>
-        <div class="placeholder" style="padding: 12px 16px; margin-top: 6px;">
-          <strong>—</strong> Address বা শহর লিখুন।
-        </div>
-        <h4>Social Media</h4>
-        <div class="placeholder" style="padding: 12px 16px; margin-top: 6px;">
-          <strong>—</strong> Facebook, Twitter বা অন্য links।
-        </div>
+        <p><a href="mailto:narir.rajnoitikodhikar2025@gmail.com">narir.rajnoitikodhikar2025@gmail.com</a></p>
+        <h4>Coordinators</h4>
+        <p><strong>সুতিতা রায়</strong> — +8801671944224</p>
+        <p><strong>নাফিসা রায়হানা</strong> — +4915739678797 (WhatsApp)</p>
+        <h4>Website</h4>
+        <p><a href="#">fwprbd.org</a></p>
       </div>
     </div>
     <div class="reveal" style="transition-delay: 0.15s;">
-      <div class="contact-form">
-        <div class="placeholder">
-          <strong>— যোগাযোগ ফর্ম</strong><br/><br/>
-          এখানে একটা contact form যোগ করুন।<br/>
-          (Name, Email, Message fields)
+      <div class="contact-form-box">
+        <h4>Send us a message</h4>
+        <div class="form-field">
+          <label>Name</label>
+          <input type="text" placeholder="আপনার নাম"/>
         </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" placeholder="আপনার ইমেইল"/>
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea placeholder="আপনার বার্তা লিখুন..."></textarea>
+        </div>
+        <button class="form-submit">Send Message</button>
       </div>
     </div>
   </div>
@@ -658,11 +990,13 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">FWPR<span>.</span></div>
-  <p>© 2026 Forum for Women's Political Rights Bangladesh — <a href="#">fwprbd.org</a></p>
+  <p>© 2026 Forum for Women's Political Rights Bangladesh — নারীর রাজনৈতিক অধিকার ফোরাম</p>
+  <p><a href="mailto:narir.rajnoitikodhikar2025@gmail.com">narir.rajnoitikodhikar2025@gmail.com</a> · <a href="#">fwprbd.org</a></p>
 </footer>
 
-<!-- SCROLL REVEAL JS -->
+<!-- SCRIPTS -->
 <script>
+  // Scroll Reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -672,6 +1006,21 @@
     });
   }, { threshold: 0.15 });
   reveals.forEach(el => observer.observe(el));
+
+  // Hamburger toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('open');
+  });
+  // Close mobile nav on link click
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('open');
+    });
+  });
 </script>
 
 </body>
